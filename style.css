@@ -210,3 +210,21 @@ textarea{
     object-fit: contain;
 }
 
+/* --- uniform thumbnails --- */
+.thumb {
+  width: 110px;          /* pick any size that fits your design */
+  height: 110px;
+  object-fit: cover;     /* crops edges, keeps aspect ratio */
+  border-radius: 8px;    /* optional rounded corners */
+  flex-shrink: 0;        /* keeps the image from shrinking in flex row */
+}
+
+/* --- make EVERY thumbnail inside .info‑box perfectly square --- */
+.info-box img:not(.right){          /* target all thumbnails except the arrow */
+    width: 80px;                    /* ← pick any square size   */
+    height: 80px;                   /* ←   you like (same value)*/
+    object-fit: cover;              /* crop edges, keep ratio   */
+    margin: 10px;                   /* keep your original gap   */
+    border-radius: 6px;             /* optional rounded corners */
+    float: left;                    /* maintain existing layout */
+}
